@@ -3,8 +3,9 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createAppContainer, createSwitchNavigator} from 'react-navigation';
 import Welcome from './screens/Welcome';
 import Home from './screens/Home';
-import firebase from 'firebase';
-import db from './config';
+import AddPassword from './screens/AddPassword';
+import { StackNavigator }  from './components/StackNavigator';
+import { DrawerNavigator } from './components/DrawerNavigator';
 
 export default class App extends React.Component {
   render() {  
@@ -14,16 +15,16 @@ export default class App extends React.Component {
   }
 }
 
-const switchNavigator = createSwitchNavigator({
+const SwitchNavigator = createSwitchNavigator({
   Welcome:{
     screen: Welcome
   },
-  Home:{
-    screen: Home
+  DrawerNavigator: {
+    screen: DrawerNavigator
   }
 })
 
-const AppContainer = createAppContainer(switchNavigator)
+const AppContainer = createAppContainer(SwitchNavigator)
 
 const styles = StyleSheet.create({
   container: {

@@ -54,6 +54,17 @@ export default class Welcome extends React.Component {
         })
     }
 
+    resetPassword = (email) =>{
+      firebase.auth().sendPasswordResetEmail(email)
+      .then(()=>{
+        Alert.alert('Email sent to your inbox. If you did not receive it please check in spam or junk.')
+      })
+      .catch((error)=> {
+        var errorMessage = error.message;
+        return Alert.alert(errorMessage)
+      })
+  }
+
     showModal = () =>{
         return (
             <Modal
@@ -220,6 +231,13 @@ export default class Welcome extends React.Component {
               })}>
                 <Text style = {styles.buttonText}>SIGN UP</Text>
               </TouchableOpacity>
+                <TouchableOpacity
+                onPress = {() => {
+                  this.resetPassword(this.state.email)
+                }}
+                style = {{alignItems: 'center', marginTop: 20}}>
+                <Text style = {styles.buttonText}>I FORGOT MY PASSWORD</Text>
+              </TouchableOpacity>
             </KeyboardAvoidingView>
         )
     }
@@ -271,6 +289,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    alignSelf: 'center'
   }
 })
