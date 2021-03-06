@@ -19,7 +19,7 @@ export default class AddPassword extends React.Component {
     }
 
     savePassword = async(accountName, password, image) =>{
-        if((this.state.accountName && this.state.password) || (this.state.image && this.state.accountName && this.state.password)) {
+        if(this.state.image && this.state.accountName && this.state.password) {
             db.collection("user_accounts").add({
                 email: this.state.userEmail,
                 accountName: accountName,
@@ -28,13 +28,13 @@ export default class AddPassword extends React.Component {
 
             await SecureStore.setItemAsync(accountName, password)
 
+            Alert.alert('Your password was saved successfully!')
+
             this.setState({
                 accountName: '',
                 password: '',
                 image: '#'
             })
-
-            Alert.alert('Your password was saved successfully!')
         } else {
             Alert.alert('Please fill all the fields.')
         }
