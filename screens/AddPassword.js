@@ -26,7 +26,7 @@ export default class AddPassword extends React.Component {
                 image: image
             })
 
-            await SecureStore.setItemAsync(accountName, password)
+            await SecureStore.setItemAsync(accountName.trim(), password)
 
             Alert.alert('Your password was saved successfully!')
 
@@ -103,11 +103,11 @@ export default class AddPassword extends React.Component {
                 <Input
                   containerStyle = {{marginTop: 15}}
                   leftIcon = {{ type: 'feather', name: 'user', size: 30, color: '#D9361A' }}
-                  placeholder = 'Eg: Google Account'
+                  placeholder = 'Eg: Google'
                   placeholderTextColor = '#841DFA'
                   inputStyle = {{fontSize: 23, color: '#841DFA'}}
                   inputContainerStyle = {{borderColor: '#1DD91A', borderBottomWidth: 1.5}}
-                  label = 'Account Name'
+                  label = 'Account Name (Only one word with no special characters)'
                   labelStyle = {{fontSize: 20, color: '#D9361A'}}
                   onChangeText = {(text)=>{
                     this.setState({
