@@ -57,7 +57,7 @@ export default class Welcome extends React.Component {
     resetPassword = (email) =>{
       firebase.auth().sendPasswordResetEmail(email)
       .then(()=>{
-        Alert.alert('Email sent to your inbox. If you did not receive it please check in spam or junk.')
+        return  Alert.alert('Email sent to your inbox', 'If you did not receive it please check in spam or junk.');
       })
       .catch((error)=> {
         var errorMessage = error.message;
@@ -87,7 +87,7 @@ export default class Welcome extends React.Component {
                     <Text style = {styles.blue}>Up</Text>
                   </View>
                   <Input
-                  placeholder = 'First Name'
+                  placeholder = 'Eg: John'
                   placeholderTextColor = '#fff'
                   label = 'First Name'
                   labelStyle = {{fontSize: 20, color: '#1DD91A'}}
@@ -99,7 +99,7 @@ export default class Welcome extends React.Component {
                     })
                   }}/>
                   <Input
-                  placeholder = 'Last Name'
+                  placeholder = 'Eg: Doe'
                   placeholderTextColor = '#fff'
                   label = 'Last Name'
                   labelStyle = {{fontSize: 20, color: '#1DD91A'}}
@@ -111,7 +111,7 @@ export default class Welcome extends React.Component {
                     })
                   }}/>
                   <Input
-                  placeholder = 'Contact'
+                  placeholder = 'Eg: 1234567890'
                   placeholderTextColor = '#fff'
                   label = 'Contact'
                   labelStyle = {{fontSize: 20, color: '#1DD91A'}}
@@ -138,7 +138,7 @@ export default class Welcome extends React.Component {
                     })
                   }}/>
                   <Input
-                  placeholder = 'Enter your Password'
+                  placeholder = '•••••••••'
                   placeholderTextColor = '#fff'
                   label = 'Password'
                   labelStyle = {{fontSize: 20, color: '#1DD91A'}}
@@ -151,7 +151,7 @@ export default class Welcome extends React.Component {
                     })
                   }}/>
                   <Input
-                  placeholder = 'Confirm Password'
+                  placeholder = '•••••••••'
                   placeholderTextColor = '#fff'
                   label = 'Confirm Password'
                   labelStyle = {{fontSize: 20, color: '#1DD91A'}}

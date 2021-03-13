@@ -9,15 +9,16 @@ export default class CustomSideBar extends Component{
     return(
       <View style={styles.container}>
         <View style={styles.drawerItemsContainer}>
-          <DrawerItems {...this.props} labelStyle = {{color: '#fff', fontSize: 15}}/>
+          <DrawerItems {...this.props} labelStyle = {{color: '#fff', fontSize: 20}} itemsContainerStyle = {{marginTop: 100}} itemStyle = {{marginTop: 50}}/>
         </View>
         <View style={styles.logOutContainer}>
-          <TouchableOpacity style={styles.logOutButton}
+          <Icon name = "log-out" type = "feather" color = "#fff"/>
+          <TouchableOpacity
+          style={styles.logOutButton}
           onPress = {() => {
               this.props.navigation.navigate('Welcome')
               firebase.auth().signOut()
           }}>
-            <Icon name = "home" type = "feather" size = {30} color = "#fff"/>
             <Text style = {styles.logOutText}>Log Out</Text>
           </TouchableOpacity>
         </View>
@@ -32,13 +33,13 @@ var styles = StyleSheet.create({
     backgroundColor: '#1DD91A'
   },
   drawerItemsContainer: {
-    flex: 0.8,
-    marginTop: 50
+    flex: 0.8
   },
   logOutContainer: {
-    flex: 0.2,
-    justifyContent: 'flex-end',
-    paddingBottom: 30
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 20,
+    marginVertical: -150
   },
   logOutButton: {
     height: 30,
