@@ -4,6 +4,7 @@ import { Input } from 'react-native-elements';
 import MyHeader from '../components/MyHeader';
 import db from '../config';
 import firebase from 'firebase';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class Settings extends React.Component {
   constructor() {
@@ -70,9 +71,9 @@ render() {
       placeholder = 'First Name'
       placeholderTextColor = '#fff'
       label = 'First Name'
-      labelStyle = {{fontSize: 20, color: '#D9361A'}}
+      labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
       inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-      inputStyle = {{fontSize: 20, color: '#fff', marginLeft: 5}}
+      inputStyle = {{fontSize: RFValue(20), color: '#fff', marginLeft: 5}}
       onChangeText = {(text)=>{
       this.setState({
       firstName: text
@@ -86,9 +87,9 @@ render() {
       placeholder = 'Last Name'
       placeholderTextColor = '#fff'
       label = 'Last Name'
-      labelStyle = {{fontSize: 20, color: '#D9361A'}}
+      labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
       inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-      inputStyle = {{fontSize: 20, color: '#fff', marginLeft: 5}}
+      inputStyle = {{fontSize: RFValue(20), color: '#fff', marginLeft: 5}}
       onChangeText = {(text)=>{
       this.setState({
       lastName: text
@@ -102,9 +103,9 @@ render() {
       placeholder = 'Contact'
       placeholderTextColor = '#fff'
       label = 'Contact'
-      labelStyle = {{fontSize: 20, color: '#D9361A'}}
+      labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
       inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-      inputStyle = {{fontSize: 20, color: '#fff', marginLeft: 5}}
+      inputStyle = {{fontSize: RFValue(20), color: '#fff', marginLeft: 5}}
       keyboardType = {"numeric"}
       maxLength = {10}
       onChangeText = {(text)=>{
@@ -120,9 +121,9 @@ render() {
       placeholder = 'email@address.com'
       placeholderTextColor = '#fff'
       label = 'E-mail Address'
-      labelStyle = {{fontSize: 20, color: '#D9361A'}}
+      labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
       inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-      inputStyle = {{fontSize: 20, color: '#fff', marginLeft: 5}}
+      inputStyle = {{fontSize: RFValue(20), color: '#fff', marginLeft: 5}}
       keyboardType = {"email-address"}
       onChangeText = {(text)=>{
       this.setState({
@@ -167,7 +168,7 @@ marginTop: 30
 },
 buttonText: {
 color: '#fff',
-fontSize: 18,
+fontSize: RFValue(18),
 fontWeight: 'bold',
 alignSelf: 'center'
 }

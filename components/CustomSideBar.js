@@ -3,13 +3,14 @@ import { StyleSheet, View, Text,TouchableOpacity } from 'react-native';
 import { DrawerItems } from 'react-navigation-drawer';
 import { Icon } from'react-native-elements';
 import firebase from 'firebase';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class CustomSideBar extends Component{
   render(){
     return(
       <View style={styles.container}>
         <View style={styles.drawerItemsContainer}>
-          <DrawerItems {...this.props} labelStyle = {{color: '#fff', fontSize: 20}} itemsContainerStyle = {{marginTop: 100}} itemStyle = {{marginTop: 50}}/>
+          <DrawerItems {...this.props} labelStyle = {{color: '#fff', fontSize: RFValue(20)}} itemsContainerStyle = {{marginTop: 100}} itemStyle = {{marginTop: 50}}/>
         </View>
         <View style={styles.logOutContainer}>
           <Icon name = "log-out" type = "feather" color = "#fff"/>
@@ -48,7 +49,7 @@ var styles = StyleSheet.create({
     justifyContent: 'center'
   },
   logOutText: {
-    fontSize: 20,
+    fontSize: RFValue(20),
     fontWeight: "bold",
     color: '#fff'
   }

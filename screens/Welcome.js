@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Alert, Modal, ScrollView, TextInput, TouchableO
 import { Input, Icon } from 'react-native-elements';
 import firebase from 'firebase';
 import db from '../config';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class Welcome extends React.Component {
     constructor() {
@@ -75,7 +76,7 @@ export default class Welcome extends React.Component {
                   <Icon
                   name = "x"
                   type = "feather"
-                  size = {30}
+                  size = {RFValue(30)}
                   containerStyle = {{marginLeft: 350, marginTop: 10}}
                   onPress = {() =>{
                     this.setState({
@@ -90,9 +91,9 @@ export default class Welcome extends React.Component {
                   placeholder = 'Eg: John'
                   placeholderTextColor = '#fff'
                   label = 'First Name'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       firstName: text
@@ -102,9 +103,9 @@ export default class Welcome extends React.Component {
                   placeholder = 'Eg: Doe'
                   placeholderTextColor = '#fff'
                   label = 'Last Name'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       lastName: text
@@ -114,9 +115,9 @@ export default class Welcome extends React.Component {
                   placeholder = 'Eg: 1234567890'
                   placeholderTextColor = '#fff'
                   label = 'Contact'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   keyboardType = {"numeric"}
                   maxLength = {10}
                   onChangeText = {(text)=>{
@@ -128,9 +129,9 @@ export default class Welcome extends React.Component {
                   placeholder = 'email@address.com'
                   placeholderTextColor = '#fff'
                   label = 'E-mail Address'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   keyboardType = {"email-address"}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -141,9 +142,9 @@ export default class Welcome extends React.Component {
                   placeholder = '•••••••••'
                   placeholderTextColor = '#fff'
                   label = 'Password'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   secureTextEntry = {true}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -154,9 +155,9 @@ export default class Welcome extends React.Component {
                   placeholder = '•••••••••'
                   placeholderTextColor = '#fff'
                   label = 'Confirm Password'
-                  labelStyle = {{fontSize: 20, color: '#1DD91A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#1DD91A'}}
                   inputContainerStyle = {{borderWidth: 1, backgroundColor: '#841DFA'}}
-                  inputStyle = {{fontSize: 20, color: '#fff'}}
+                  inputStyle = {{fontSize: RFValue(20), color: '#fff'}}
                   secureTextEntry = {true}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -188,14 +189,14 @@ export default class Welcome extends React.Component {
               </View>
                 <Input
                   containerStyle = {{marginTop: 15}}
-                  leftIcon = {{ type: 'feather', name: 'mail', size: 30, color: '#D9361A' }}
+                  leftIcon = {{ type: 'feather', name: 'mail', size: RFValue(30), color: '#D9361A' }}
                   placeholder = 'email@address.com'
                   placeholderTextColor = '#841DFA'
-                  inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                  inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                   inputContainerStyle = {{borderColor: '#1DD91A', borderBottomWidth: 1.5}}
                   keyboardType="email-address"
                   label = 'E-mail Address'
-                  labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       email: text
@@ -203,14 +204,14 @@ export default class Welcome extends React.Component {
                   }}
                 />
                 <Input
-                  leftIcon = {{ type: 'feather', name: 'lock', size: 30, color: '#D9361A' }}
+                  leftIcon = {{ type: 'feather', name: 'lock', size: RFValue(30), color: '#D9361A' }}
                   placeholder = 'Enter your password'
                   placeholderTextColor = '#841DFA'
-                  inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                  inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                   inputContainerStyle = {{borderColor: '#1EABFC', borderBottomWidth: 1.5}}
                   secureTextEntry = {true}
                   label = 'Password'
-                  labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       password: text
@@ -255,12 +256,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center'
   },
   green: {
-    fontSize: 40,
+    fontSize: RFValue(40),
     color: '#1DD91A',
     fontWeight: 'bold'
   },
   blue: {
-    fontSize: 40,
+    fontSize: RFValue(40),
     color: '#1EABFC',
     fontWeight: 'bold'
   },
@@ -288,7 +289,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 18,
+    fontSize: RFValue(18),
     fontWeight: 'bold',
     alignSelf: 'center'
   }

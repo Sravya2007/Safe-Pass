@@ -6,6 +6,7 @@ import db from '../config';
 import * as SecureStore from 'expo-secure-store';
 import * as ImagePicker from "expo-image-picker";
 import * as Permissions from "expo-permissions";
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class AddPassword extends React.Component {
     constructor() {
@@ -94,21 +95,21 @@ export default class AddPassword extends React.Component {
                 name="arrow-left"
                 type="feather"
                 color="#ffffff"
-                size = {30}
+                size = {RFValue(30)}
                 onPress={() => this.props.navigation.goBack()}/>
                 }
-                centerComponent={{ text: 'Add Password', style: {color: '#ffffff', fontSize: 30, fontWeight: "bold"} }}
+                centerComponent={{ text: 'Add Password', style: {color: '#ffffff', fontSize: RFValue(28), fontWeight: "bold"} }}
                 backgroundColor = "#1DD91A"/>
 
                 <Input
                   containerStyle = {{marginTop: 15}}
-                  leftIcon = {{ type: 'feather', name: 'user', size: 30, color: '#D9361A' }}
+                  leftIcon = {{ type: 'feather', name: 'user', size: RFValue(30), color: '#D9361A' }}
                   placeholder = 'Eg: Google'
                   placeholderTextColor = '#841DFA'
-                  inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                  inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                   inputContainerStyle = {{borderColor: '#1DD91A', borderBottomWidth: 1.5}}
                   label = 'Account Name (Only one word with no special characters)'
-                  labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       accountName: text
@@ -118,14 +119,14 @@ export default class AddPassword extends React.Component {
                 />
 
                 <Input
-                  leftIcon = {{ type: 'feather', name: 'lock', size: 30, color: '#D9361A' }}
+                  leftIcon = {{ type: 'feather', name: 'lock', size: RFValue(30), color: '#D9361A' }}
                   placeholder = "Enter your account's password"
                   placeholderTextColor = '#841DFA'
-                  inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                  inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                   inputContainerStyle = {{borderColor: '#1EABFC', borderBottomWidth: 1.5}}
                   secureTextEntry = {true}
                   label = 'Password'
-                  labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                  labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                   onChangeText = {(text)=>{
                     this.setState({
                       password: text
@@ -145,7 +146,7 @@ export default class AddPassword extends React.Component {
                 placeholderStyle = {{backgroundColor: '#D9361A'}}
                 icon = {{name: "user", type: "feather"}}
                 >
-                <Avatar.Accessory size = {50} style = {{backgroundColor: '#841DFA'}}/>
+                <Avatar.Accessory size = {RFValue(50)} style = {{backgroundColor: '#841DFA'}}/>
                 </Avatar>
 
                 <TouchableOpacity
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
       color: '#fff',
-      fontSize: 18,
+      fontSize: RFValue(18),
       fontWeight: 'bold',
       alignSelf: 'center'
     }

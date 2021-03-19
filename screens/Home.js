@@ -4,6 +4,7 @@ import { Icon, ListItem, Avatar, Input } from 'react-native-elements';
 import MyHeader from '../components/MyHeader';
 import firebase from 'firebase';
 import db from '../config';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 export default class Home extends React.Component {
     constructor() {
@@ -62,7 +63,7 @@ export default class Home extends React.Component {
                 source = {{
                     uri: item.image
                 }}
-                size = {70}
+                size = {RFValue(70)}
                 containerStyle = {{alignSelf: 'center'}}
                 placeholderStyle = {{backgroundColor: '#D9361A'}}
                 icon = {{name: "user", type: "feather"}}
@@ -75,7 +76,7 @@ export default class Home extends React.Component {
                             isModalVisible: true
                         })
                     }}><Text
-                    style = {{color: '#1EABFC', fontWeight: 'bold', fontSize: 20}}>{item.accountName}</Text></TouchableOpacity></ListItem.Title>
+                    style = {{color: '#1EABFC', fontWeight: 'bold', fontSize: RFValue(20)}}>{item.accountName}</Text></TouchableOpacity></ListItem.Title>
                 </ListItem.Content>
                 <TouchableOpacity
                 style = {styles.view}>
@@ -108,7 +109,7 @@ export default class Home extends React.Component {
                 <Icon
                     name = "x"
                     type = "feather"
-                    size = {30}
+                    size = {RFValue(30)}
                     containerStyle = {{marginLeft: 350, marginTop: 20}}
                     onPress = {() =>{
                     this.setState({
@@ -120,14 +121,14 @@ export default class Home extends React.Component {
                     <KeyboardAvoidingView>
                     <Input
                     containerStyle = {{marginTop: 15}}
-                    leftIcon = {{ type: 'feather', name: 'mail', size: 30, color: '#D9361A' }}
+                    leftIcon = {{ type: 'feather', name: 'mail', size: RFValue(30), color: '#D9361A' }}
                     placeholder = 'email@address.com'
                     placeholderTextColor = '#841DFA'
-                    inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                    inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                     inputContainerStyle = {{borderColor: '#1DD91A', borderBottomWidth: 1.5}}
                     keyboardType="email-address"
                     label = 'E-mail Address'
-                    labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                    labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                     onChangeText = {(text)=>{
                         this.setState({
                         email: text
@@ -135,14 +136,14 @@ export default class Home extends React.Component {
                     }}
                     />
                     <Input
-                    leftIcon = {{ type: 'feather', name: 'lock', size: 30, color: '#D9361A' }}
+                    leftIcon = {{ type: 'feather', name: 'lock', size: RFValue(30), color: '#D9361A' }}
                     placeholder = 'Enter your password'
                     placeholderTextColor = '#841DFA'
-                    inputStyle = {{fontSize: 23, color: '#841DFA'}}
+                    inputStyle = {{fontSize: RFValue(23), color: '#841DFA'}}
                     inputContainerStyle = {{borderColor: '#1EABFC', borderBottomWidth: 1.5}}
                     secureTextEntry = {true}
                     label = 'Password'
-                    labelStyle = {{fontSize: 20, color: '#D9361A'}}
+                    labelStyle = {{fontSize: RFValue(20), color: '#D9361A'}}
                     onChangeText = {(text)=>{
                         this.setState({
                         password: text
@@ -182,7 +183,7 @@ export default class Home extends React.Component {
                         onPress = {() =>{
                             this.props.navigation.navigate('AddPassword')
                         }}>
-                            <Icon name = "plus" type = "feather" color = "#fff" size = {30}/>
+                            <Icon name = "plus" type = "feather" color = "#fff" size = {RFValue(30)}/>
                         </TouchableOpacity>
                         <View style = {styles.addView}>
                             <Text style = {styles.addText}>Add Password</Text>
@@ -252,7 +253,7 @@ const styles = StyleSheet.create({
       alignSelf: 'center'
     },
     noPwd: {
-        fontSize: 22,
+        fontSize: RFValue(22),
         color: '#841DFA',
         alignSelf: 'center',
         marginTop: 20
@@ -267,12 +268,12 @@ const styles = StyleSheet.create({
     },
     buttonText: {
       color: '#fff',
-      fontSize: 18,
+      fontSize: RFValue(18),
       fontWeight: 'bold',
       alignSelf: 'center'
     },
     blue: {
-        fontSize: 20,
+        fontSize: RFValue(20),
         color: '#1EABFC',
         fontWeight: 'bold',
         alignSelf: 'center'
