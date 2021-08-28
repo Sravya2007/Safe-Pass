@@ -98,7 +98,7 @@ export default class AddPassword extends React.Component {
                 size = {RFValue(30)}
                 onPress={() => this.props.navigation.goBack()}/>
                 }
-                centerComponent={{ text: 'Add Password', style: {color: '#ffffff', fontSize: RFValue(28), fontWeight: "bold"} }}
+                centerComponent={{ text: 'Add Password', style: {color: '#ffffff', fontSize: RFValue(26), fontWeight: "bold"} }}
                 backgroundColor = "#1DD91A"/>
 
                 <Input
